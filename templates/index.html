@@ -12,10 +12,9 @@
 <div class="form">
     <form method="POST" action="{{ url_for('index') }}">
         <div>
-            <label for="note">Note</label>
-            <input type="text" id="note" name="note-text" placeholder="Write something">
+            <textarea id="note" name="note-text" placeholder="Write something" rows="10" cols="30"></textarea>
         </div>
-        <button type="submit">Upload</button>
+        <button type="submit">Post it !</button>
     </form>
 </div>
 </body>
