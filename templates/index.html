@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NoteApp</title>
+    <link  href="basic.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div id="header">
+    <h1>Note App</h1>
+</div>
+<div class="form">
+    <form method="POST" action="{{ url_for('index') }}">
+        <div>
+            <label for="note">Note</label>
+            <input type="text" id="note" name="note-text" placeholder="Write something">
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+</div>
+</body>
+</html>
