@@ -1,12 +1,14 @@
-from flask import Flask, g, render_template, request, redirect, url_for
+from flask import Flask, g, render_template, request, redirect, url_for, current_app
 import sqlite3
+import os
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = 'Mysuperdupersecretkey'
 
 def connect_to_db():
-    sql = sqlite3.connect(r'C:\Users\Administrator\Desktop\Coding\note_app\note_app.db')
+    print(os.path.join(current_app.root_path, 'note_app.db'))
+    sql = sqlite3.connect(os.path.join(current_app.root_path, 'note_app.db'))
     sql.row_factory = sqlite3.Row
     return sql
 
@@ -35,10 +37,19 @@ def index():
 @app.route('/notes', methods=['GET'])
 def notes():
     db = get_db()
-    cur = db.execute('select note from notes')
+    cur = db.execute('''select note from notes''')
     results = cur.fetchall()
 
     return render_template('notes_list.html', results=results)
+
+@app.route('/done/<int:note_id>', methods=['POST'])
+def done(note_id):
+    db = get_db()
+    db.execute('''update notes set done = 1 where id = (?)''',
+                     [int(note_id)])
+    db.commit()
+    return redirect(url_for('notes'))
+
 
 
 if __name__ == "__main__":

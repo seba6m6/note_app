@@ -20,9 +20,12 @@
 <div id="notes">
     <h4 id="notes-header">Stuff i need to deal with</h4>
     <ul id="notes-list" >
+        {% if results %}
         {% for n in results %}
-        <li> {{n.note}}</li>
+            <li> {{n['note']}}</li>
+            <a href="{{ url_for('done', note_id = n['id']) }}">Done</a>
         {% endfor %}
+        {% endif %}
     </ul>
 
 </div>
