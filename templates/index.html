@@ -6,9 +6,18 @@
     <link href="../static/basic.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
+<nav>
+    <div id="brand">
+        <a href="{{ url_for('index') }}"><h3>POST IT!</h3></a>
+    </div>
+    <div id="nav-notes">
+        <a href="{{ url_for('')}}" <h1>My notes</h1>
+    </div>
+</nav>
 <div id="header">
     <h1>Note App</h1>
 </div>
+
 <div class="form">
     <form method="POST" action="{{ url_for('index') }}">
         <div>

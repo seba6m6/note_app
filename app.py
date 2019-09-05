@@ -1,4 +1,3 @@
-
 from flask import Flask, g, render_template, request
 import sqlite3
 
@@ -24,8 +23,13 @@ def close_db(error):
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        return '<h1> Text：{} </h1>'.format(request.form['note-text'])
+        return render_template('notes_list.html')
     return render_template('index.html')
+
+@app.route('/', methods=['GET'])
+def notes():
+    return render_template('notes_list.html')
+
 
 if __name__ == "__main__":
     app.run()
