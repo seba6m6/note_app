@@ -20,7 +20,7 @@ nav {
     align-self: center;
     padding-left: 8px;
 }
-#brand a {
+#brand a, #nav-notes a {
     text-decoration: none;
     color: white;
 }
@@ -36,6 +36,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
     grid-row: 2/2;
 }
 #header h1 {

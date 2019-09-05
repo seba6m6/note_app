@@ -8,10 +8,10 @@
 <body>
 <nav>
     <div id="brand">
-        <h3>POST IT!</h3>
+        <a href="{{ url_for('index') }}"><h3>POST IT!</h3></a>
     </div>
     <div id="nav-notes">
-        <h1>My notes</h1>
+        <a href="{{ url_for('notes')}}"><h1>My notes</h1></a>
     </div>
 </nav>
 <div id="header">
@@ -20,7 +20,9 @@
 <div id="notes">
     <h4 id="notes-header">Stuff i need to deal with</h4>
     <ul id="notes-list" >
-        <li> I need to pick up Lisa</li>
+        {% for n in results %}
+        <li> {{n.note}}</li>
+        {% endfor %}
     </ul>
 
 </div>

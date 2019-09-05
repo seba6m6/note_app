@@ -1,4 +1,4 @@
-from flask import Flask, g, render_template, request
+from flask import Flask, g, render_template, request, redirect, url_for
 import sqlite3
 
 app = Flask(__name__)
@@ -23,12 +23,22 @@ def close_db(error):
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        return render_template('notes_list.html')
+        name = request.form['note-text']
+
+        db = get_db()
+        db.execute('insert into notes (note) values (?)', [name])
+        db.commit()
+        return redirect(url_for('notes'))
+
     return render_template('index.html')
 
-@app.route('/', methods=['GET'])
+@app.route('/notes', methods=['GET'])
 def notes():
-    return render_template('notes_list.html')
+    db = get_db()
+    cur = db.execute('select note from notes')
+    results = cur.fetchall()
+
+    return render_template('notes_list.html', results=results)
 
 
 if __name__ == "__main__":
