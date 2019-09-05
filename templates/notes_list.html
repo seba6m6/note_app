@@ -22,8 +22,10 @@
     <ul id="notes-list" >
         {% if results %}
         {% for n in results %}
+            {% if not n['done'] %}
             <li> {{n['note']}}</li>
             <a href="{{ url_for('done', note_id = n['id']) }}">Done</a>
+            {% endif %}
         {% endfor %}
         {% endif %}
     </ul>

@@ -37,16 +37,16 @@ def index():
 @app.route('/notes', methods=['GET'])
 def notes():
     db = get_db()
-    cur = db.execute('''select note from notes''')
+    cur = db.execute('''select note, done, id from notes''')
     results = cur.fetchall()
 
     return render_template('notes_list.html', results=results)
 
-@app.route('/done/<int:note_id>', methods=['POST'])
+@app.route('/done/<int:note_id>', methods=['POST', 'GET'])
 def done(note_id):
     db = get_db()
     db.execute('''update notes set done = 1 where id = (?)''',
-                     [int(note_id)])
+                     [note_id])
     db.commit()
     return redirect(url_for('notes'))
 
