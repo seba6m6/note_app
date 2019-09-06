@@ -26,7 +26,6 @@
             <li>{{n['note']}}
                 <a href="{{ url_for('done', note_id = n['id']) }}"><button type="button">Done</button></a>
             </li>
-
             {% endif %}
         {% endfor %}
         {% endif %}
