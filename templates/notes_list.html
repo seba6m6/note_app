@@ -23,8 +23,10 @@
         {% if results %}
         {% for n in results %}
             {% if not n['done'] %}
-            <li> {{n['note']}}</li>
-            <a href="{{ url_for('done', note_id = n['id']) }}">Done</a>
+            <li>{{n['note']}}
+                <a href="{{ url_for('done', note_id = n['id']) }}"><button type="button">Done</button></a>
+            </li>
+
             {% endif %}
         {% endfor %}
         {% endif %}

@@ -29,6 +29,7 @@ nav {
     color: white;
     align-self: center;
     padding-right: 8px;
+
 }
 #header {
     width: 100%;
@@ -38,6 +39,7 @@ nav {
     justify-content: center;
     margin-top: 20px;
     grid-row: 2/2;
+    font-family: sans-serif;
 }
 #header h1 {
     background-color: rgba(0, 185, 185, 0.42);
@@ -61,8 +63,10 @@ nav {
     justify-content: center;
 }
 #notes-header {
-
+    font-family: sans-serif;
 }
 #notes-list {
     margin-left: -30px;
+}
+#notes-list a {
 }
