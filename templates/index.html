@@ -7,7 +7,7 @@
     {{super()}}
 {% endblock %}
 {% block navbar %}
-<nav>
+<nav class="navbar">
     <div id="brand">
         <a href="{{ url_for('index') }}"><h3>POST IT!</h3></a>
     </div>
@@ -17,11 +17,11 @@
 </nav>
 {% endblock %}
 {% block content %}
-<div id="header">
+<div id="header" class="container">
     <h1>Note App</h1>
 </div>
 
-<div class="form">
+<div class="form container">
     <form method="POST" action="{{ url_for('index') }}">
         <div>
             <textarea id="note" name="note-text" placeholder="Write something" rows="10" cols="30"></textarea>
