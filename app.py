@@ -3,7 +3,7 @@ import sqlite3
 import os
 from flask_bootstrap import Bootstrap
 app = Flask(__name__)
-
+Bootstrap(app)
 app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = 'Mysuperdupersecretkey'
 
@@ -54,5 +54,4 @@ def done(note_id):
 
 
 if __name__ == "__main__":
-    Bootstrap(app)
     app.run()
