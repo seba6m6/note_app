@@ -17,11 +17,11 @@
 </nav>
 {% endblock %}
 {% block content %}
-<div id="header" class="container">
+<div id="header" class="container-fluid">
     <h1>Note App</h1>
 </div>
 
-<div class="form container">
+<div class="form container-fluid">
     <form method="POST" action="{{ url_for('index') }}">
         <div>
             <textarea id="note" name="note-text" placeholder="Write something" rows="10" cols="30"></textarea>
