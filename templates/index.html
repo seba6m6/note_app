@@ -10,19 +10,19 @@
     <link href="../static/basic.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<nav class="navbar">
-    <div id="brand">
+<nav class="navbar d-flex">
+    <div id="brand" class="navbar-brand">
         <a href="{{ url_for('index') }}"><h3>POST IT!</h3></a>
     </div>
     <div id="nav-notes">
         <a href="{{ url_for('notes')}}"><h3>My notes</h3></a>
     </div>
 </nav>
-<div id="header" class="container">
+<div id="header" class="container-fluid">
     <h1>Note App</h1>
 </div>
 
-<div class="form container">
+<div class="form container-fluid">
     <form method="POST" action="{{ url_for('index') }}">
         <div>
             <textarea id="note" name="note-text" placeholder="Write something" rows="10" cols="30"></textarea>
