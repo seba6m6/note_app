@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>NoteApp</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="../static/basic.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<nav class="navbar d-flex">
-    <div id="brand" class="navbar-brand">
+<nav>
+    <div id="brand">
         <a href="{{ url_for('index') }}"><h3>POST IT!</h3></a>
     </div>
     <div id="nav-notes">
         <a href="{{ url_for('notes')}}"><h3>My notes</h3></a>
     </div>
 </nav>
-<div id="header" class="container-fluid col-sm-12" >
+<div id="header">
     <h1>Note App</h1>
 </div>
 
-<div class="form container-fluid col-sm-12">
+<div class="form">
     <form method="POST" action="{{ url_for('index') }}">
         <div>
             <textarea id="note" name="note-text" placeholder="Write something" rows="10" cols="30"></textarea>

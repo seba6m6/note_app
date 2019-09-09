@@ -15,6 +15,7 @@ nav {
     justify-content: space-between;
 
 }
+
 #brand {
     color: white;
     align-self: center;
@@ -48,6 +49,14 @@ nav {
     align-items: center;
     justify-content: center;
 
+}
+@media (max-width: 480px) {
+    #header h1 {
+        height: 40vh;
+    }
+    nav {
+        height: 10vh
+    }
 }
 .form {
     margin-top: 50px;
